@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.codepath.apps.restclienttemplate.R;
 import com.codepath.apps.restclienttemplate.models.FlickrPhoto;
 import com.nostra13.universalimageloader.core.ImageLoader;
+import com.squareup.picasso.Picasso;
 
 import java.util.HashMap;
 import java.util.List;
@@ -48,9 +49,17 @@ public class PhotoArrayAdapter extends ArrayAdapter<FlickrPhoto> {
 		} else {
 			holder = (ViewHolder) view.getTag();
 		}
-
 		holder.imageview.setImageResource(android.R.color.transparent);
-		imageLoader.displayImage(photo.getUrl(), holder.imageview);
+		try{
+			Picasso.with(getContext())
+					.load(photo.getUrl())
+					.fit()
+					.into(holder.imageview);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+
+//		imageLoader.displayImage(photo.getUrl(), holder.imageview);
 		holder.name.setText(photo.getName());
 		holder.layout.setVisibility(View.GONE);
 		holder.imageview.setVisibility(View.VISIBLE);
