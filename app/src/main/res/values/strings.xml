@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">FlickrAnim</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="title_activity_photos">Flickr Photos</string>
+    <string name="login_label">Log in</string>
+    <string name="network_connection">Please check Network connection</string>
+
+    <item type="id" name="IMG_OPEN_TAG"/>
+    
+
+</resources>
